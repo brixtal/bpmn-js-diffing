@@ -230,9 +230,14 @@
   }
 
 
-  loadDiagram('left', { url: '../resources/pizza-collaboration/old.bpmn' });
-  loadDiagram('right', { url: '../resources/pizza-collaboration/new.bpmn' });
+  //loadDiagram('left', { url: '../resources/pizza-collaboration/old.bpmn' });
+  //loadDiagram('right', { url: '../resources/pizza-collaboration/new.bpmn' });
 
+  var blob_original = new Blob([decodeURIComponent(sessionStorage.originalBPMN)], {type: 'text/xml'});
+  var blob_tailored = new Blob([decodeURIComponent(sessionStorage.bpmn)], {type: 'text/xml'});
+
+  openFile(blob_original, 'left', openDiagram);
+  openFile(blob_tailored, 'right', openDiagram);
 
   function openDiagram(xml, side) {
     loadDiagram(side, { xml: xml });
@@ -240,7 +245,6 @@
 
   function openFile(file, target, done) {
     var reader = new FileReader();
-
     reader.onload = function(e) {
       var xml = e.target.result;
       done(xml, target);
