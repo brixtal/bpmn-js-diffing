@@ -240,7 +240,7 @@ function Viewer(options) {
 
   /* jshint +W101 */
 
-  var a = $('<a href="http://bpmn.io" target="_blank" class="bjs-powered-by" title="Powered by bpmn.io" />').css({
+  var a = $('<a href="https://github.com/bpmn-io/bpmn-js-differ" target="_blank" class="bjs-powered-by logo" title="Forked from bpmn-js diffing" />').css({
     position: 'absolute',
     bottom: 15,
     right: 15,
