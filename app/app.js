@@ -337,7 +337,7 @@
 
     var changesTable = $(
       '<table>' +
-        '<thead><tr><th>#</th><th>Name</th><th>Type</th><th>Change</th></tr></thead>' +
+        '<thead><tr><th>#</th><th>Name</th><th>Type</th><th>Operations</th></tr></thead>' +
       '</table>');
 
     var count = 0;
@@ -357,11 +357,11 @@
     }
 
     $.each(result._removed, function(i, obj) {
-      addRow(obj, 'removed', 'Removed');
+      addRow(obj, 'removed', 'Delete');
     });
 
     $.each(result._added, function(i, obj) {
-      addRow(obj, 'added', 'Added');
+      addRow(obj, 'added', 'Insert');
     });
 
     $.each(result._changed, function(i, obj) {
